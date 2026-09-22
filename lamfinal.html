@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#f76da8">
+<title>Happy Birthday Lamia ♡</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Great+Vibes&family=Noto+Sans+Bengali:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+    font-family:"Noto Sans Bengali","Poppins",sans-serif;
+    background:#160b15;color:white;overflow-x:hidden
+}
+button{font:inherit}
+section{
+    min-height:100svh;position:relative;display:flex;
+    align-items:center;justify-content:center;overflow:hidden
+}
+.container{width:min(900px,90%);margin:auto;position:relative;z-index:5;text-align:center}
+.small{font-family:Poppins,sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#ffd4e4}
+.hand{font-family:"Dancing Script",cursive}
+.script{font-family:"Great Vibes",cursive}
+p{line-height:1.9}
+.btn{
+    border:0;padding:14px 25px;border-radius:50px;
+    background:linear-gradient(135deg,#ff70aa,#cf68e8);color:white;
+    font-weight:600;box-shadow:0 12px 35px #ff5e9c55;
+    cursor:pointer;transition:.25s
+}
+.btn:active{transform:scale(.95)}
+.glow{position:absolute;width:300px;height:300px;border-radius:50%;filter:blur(70px);opacity:.25;pointer-events:none}
+.glow1{background:#ff4d99;left:-150px;top:10%}
+.glow2{background:#9c58ff;right:-150px;bottom:5%}
+#progress{position:fixed;top:0;left:0;width:0;height:3px;background:linear-gradient(90deg,#fff,#ff72ad,#c976ff);z-index:100}
+
+/* ENTER */
+#enter{
+    background:radial-gradient(circle at 50% 30%,#ff76aa55,transparent 35%),linear-gradient(160deg,#451a42,#170b17 70%)
+}
+.stars{position:absolute;inset:0}
+.stars span{position:absolute;color:#ffd6e6;animation:twinkle 2s infinite alternate}
+@keyframes twinkle{from{opacity:.25;transform:scale(.7)}to{opacity:1;transform:scale(1)}}
+.enter-content h1{
+    font-family:"Great Vibes",cursive;font-weight:400;
+    font-size:clamp(90px,20vw,170px);line-height:.75;
+    text-shadow:0 0 45px #ff72ad66;margin:20px 0
+}
+.enter-content .date{color:#ffd3e4;letter-spacing:5px;font-family:Poppins,sans-serif;font-size:13px;margin:18px 0 28px}
+.enter-content .intro{font-family:"Dancing Script",cursive;font-size:24px;margin-bottom:30px}
+
+/* WISH */
+#wish{
+    background:radial-gradient(circle at 50% 45%,#ff77ae33,transparent 30%),linear-gradient(145deg,#210e20,#3a1639)
+}
+.wish-title{font-family:"Dancing Script",cursive;font-size:clamp(65px,15vw,120px);color:#ffb1d0;margin:15px 0}
+.wish-text{max-width:600px;margin:0 auto 30px;font-size:15px;color:#f8dce9}
+.wish-reveal{
+    margin:30px auto;max-width:520px;min-height:80px;
+    display:flex;align-items:center;justify-content:center;
+    font-family:"Dancing Script",cursive;font-size:27px;color:#ffd0e2
+}
+.wish-reveal span{display:none}
+.wish-reveal.show span{display:block;animation:fadeUp .8s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+
+/* CAKE */
+#cake{
+    background:radial-gradient(circle at 50% 65%,#ff83b944,transparent 28%),linear-gradient(160deg,#35112e,#120912)
+}
+.cake-title{font-family:"Dancing Script",cursive;font-size:clamp(50px,11vw,85px);color:#ffafd0}
+.cake-box{height:300px;position:relative;display:flex;align-items:center;justify-content:center}
+.cake{width:260px;height:130px;position:relative;margin-top:60px}
+.tier{position:absolute;left:50%;transform:translateX(-50%);border-radius:12px 12px 22px 22px;box-shadow:0 16px 30px #0005}
+.bottom{width:260px;height:80px;bottom:0;background:linear-gradient(#ff8fb9,#df4d91)}
+.top{width:195px;height:60px;bottom:70px;background:linear-gradient(#ffc1d9,#ed70a6)}
+.icing{position:absolute;width:195px;height:20px;left:32px;bottom:69px;border-radius:50%;background:#fff4f8}
+.candle{position:absolute;z-index:4;bottom:126px;width:9px;height:45px;background:#ffe0eb;border-radius:5px}
+.candle:nth-child(1){left:85px}.candle:nth-child(2){left:125px}.candle:nth-child(3){left:165px}
+.flame{position:absolute;top:-23px;left:-5px;font-size:18px;animation:flicker .45s infinite alternate}
+@keyframes flicker{to{transform:scale(1.25);opacity:.65}}
+.blown .flame{display:none}
+.blown .candle:after{content:"✨";position:absolute;top:-23px;left:-7px}
+.cake-message{min-height:60px;color:#f8d8e7;line-height:1.7}
+
+/* LETTER */
+#letter{
+    background:radial-gradient(circle at 20% 50%,#ff73a933,transparent 30%),linear-gradient(135deg,#fce5ef,#fff7fb);
+    color:#54243d
+}
+.letter-layout{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+@media(max-width:700px){.letter-layout{grid-template-columns:1fr;gap:30px}}
+.letter-heading{font-family:"Dancing Script",cursive;font-size:clamp(50px,10vw,80px);color:#d94280;line-height:.9}
+.letter-layout p{color:#67374e;margin-top:20px}
+.thanks{font-family:"Dancing Script",cursive;color:#d44380;font-size:25px;margin-top:20px}
+
+/* LETTER PAGE / MESSAGE WALL */
+#messages{
+    background:
+      radial-gradient(circle at 50% 25%,#ff7cae22,transparent 32%),
+      linear-gradient(180deg,#fff4f8,#ffe6f1 60%,#fff8fb);
+    color:#4d263b;padding:80px 0
+}
+.message-page{width:min(820px,90%);margin:auto}
+.message-top{text-align:center;margin-bottom:40px}
+.message-top .small{color:#b34b75}
+.message-top h2{font-family:"Dancing Script",cursive;font-size:clamp(50px,10vw,82px);color:#d83f7f;margin:10px 0}
+.message-top p{color:#704258;font-size:14px}
+.sms-list{display:flex;flex-direction:column;gap:14px;text-align:left}
+.sms{
+    max-width:78%;padding:16px 19px;border-radius:20px;
+    background:white;box-shadow:0 9px 28px #9d3d6312;
+    border:1px solid #f4d5e2;color:#63344c;
+    position:relative;animation:messageIn .7s both
+}
+.sms:nth-child(even){align-self:flex-end;background:#ffe0ed}
+.sms .time{display:block;font-family:Poppins,sans-serif;font-size:9px;color:#b58298;margin-top:7px;text-align:right}
+.sms strong{color:#c43e77}
+@keyframes messageIn{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+.back-letter{margin-top:35px;text-align:center}
+
+/* END */
+#ending{
+    background:radial-gradient(circle at 50% 35%,#ff74aa44,transparent 32%),linear-gradient(180deg,#45163e,#170a17)
+}
+.final-name{
+    font-family:"Great Vibes",cursive;font-size:clamp(90px,20vw,165px);
+    line-height:.8;color:#fff;text-shadow:0 0 45px #ff75ad66;
+    animation:pulse 2s infinite
+}
+@keyframes pulse{50%{text-shadow:0 0 65px #ff75ada0;transform:scale(1.025)}}
+.final-title{font-family:"Dancing Script",cursive;color:#ffafd0;font-size:clamp(35px,8vw,60px);margin:25px 0 15px}
+.final-message{max-width:650px;margin:auto;font-size:14px;color:#f1d7e5;line-height:1.9}
+.credit{margin-top:42px;font-family:"Dancing Script",cursive;font-size:25px;color:#ffc2d9}
+.credit b{color:#ff72ad}
+
+/* NEXT */
+#next{
+    position:fixed;z-index:90;left:50%;
+    bottom:max(18px,env(safe-area-inset-bottom));
+    transform:translateX(-50%);
+    width:55px;height:55px;border-radius:50%;
+    border:1px solid #ffffff44;background:#1b0b18cc;
+    backdrop-filter:blur(15px);color:white;font-size:24px;
+    cursor:pointer;box-shadow:0 10px 30px #0005;transition:.25s
+}
+#next:hover{background:#ef5c9d;transform:translateX(-50%) translateY(-3px)}
+#next.hidden{opacity:0;pointer-events:none}
+
+/* PARTICLES */
+.confetti{position:fixed;z-index:200;pointer-events:none;animation:pop 1.4s ease-out forwards}
+@keyframes pop{to{transform:translate(var(--x),var(--y)) rotate(500deg);opacity:0}}
+
+@media(max-width:420px){
+    .sms{max-width:88%}
+    .cake{transform:scale(.82)}
+}
+</style>
+</head>
+
+<body>
+
+<div id="progress"></div>
+
+<!-- 1. ENTER -->
+<section id="enter">
+    <div class="stars">
+        <span style="left:12%;top:18%">✦</span>
+        <span style="left:25%;top:65%">✧</span>
+        <span style="left:45%;top:25%">·</span>
+        <span style="right:20%;top:20%">✦</span>
+        <span style="right:10%;top:58%">✧</span>
+        <span style="left:70%;top:72%">·</span>
+    </div>
+    <div class="glow glow1"></div><div class="glow glow2"></div>
+
+    <div class="container enter-content">
+        <div class="small">A little surprise for</div>
+        <h1>Lamia ♡</h1>
+        <div class="intro">From Hasib</div>
+        <div class="date">23 September </div>
+        <button class="btn" onclick="enterSite()">♡ Tap to Enter</button>
+    </div>
+</section>
+
+<!-- 2. WISH -->
+<section id="wish">
+    <div class="glow glow1"></div><div class="glow glow2"></div>
+    <div class="container">
+        <div class="small">A wish for you</div>
+        <div class="wish-title">Make a Wish ✨</div>
+        <p class="wish-text">
+            <br>
+            
+        </p>
+
+        <div class="wish-reveal" id="wishReveal">
+            <span>তোমার সুন্দর সব ইচ্ছেগুলো একদিন সত্যি হোক। ♡</span>
+        </div>
+
+        <button class="btn" onclick="revealWish()">✨ I Made My Wish</button>
+    </div>
+</section>
+
+<!-- 3. CAKE -->
+<section id="cake">
+    <div class="glow glow1"></div><div class="glow glow2"></div>
+    <div class="container">
+        <div class="small">Your birthday moment</div>
+        <div class="cake-title">Happy Birthday, Lamia 🎂</div>
+
+        <div class="cake-box">
+            <div class="cake" id="cakeObject">
+                <div class="candle"><span class="flame">🔥</span></div>
+                <div class="candle"><span class="flame">🔥</span></div>
+                <div class="candle"><span class="flame">🔥</span></div>
+                <div class="tier top"></div>
+                <div class="icing"></div>
+                <div class="tier bottom"></div>
+            </div>
+        </div>
+
+        <div class="cake-message" id="cakeMessage">
+            Make another wish before blow  the candles  ✨
+        </div>
+        <br>
+        <button class="btn" onclick="blowCandles()">🎂 Blow the Candles</button>
+    </div>
+</section>
+
+<!-- 4. MESSAGE PAGE -->
+<section id="messages">
+    <div class="message-page">
+
+        <div class="message-top">
+            <div class="small">For Lamia</div>
+            <h2>কিছু কথা... 💗</h2>
+            <p>যেগুলো হয়তো সরাসরি বলা হয়নি।</p>
+        </div>
+
+        <div class="sms-list">
+
+            <div class="sms">
+                <strong>💌 Firstly </strong><br>
+                কলেজে ভর্তি হওয়ার পর থেকে তুমি আমাকে পড়াশোনায় অনেকভাবে সাহায্য করেছো।
+ কোনো কিছু বুঝতে সমস্যা হলে তুমি বুঝিয়ে দিয়েছো.
+                <span class="time">একটা ছোট্ট Thank You</span>
+            </div>
+
+            <div class="sms">
+                <strong>📚 secondly </strong><br> Year change exam ek  onke help korecho(ja amar chele Friend rao kore na).Tar jonno 
+             
+               
+                <span class="time"> Big   ধন্যবাদ ♡</span>
+            </div>
+
+            <div class="sms">
+                <strong>🌸 Thirdly </strong><br>
+                One important think: বাজারে তো এমনেতেই সব কিছুর দাম বাড়ছে, তাই দেশের মেয়েরা যদি ময়দার দামটা একটু 🤌....
+                <span class="time">(Just joking) </span>
+            </div>
+
+            <div class="sms">
+                <strong>✨ Frothy </strong><br>
+                বক বক করতে চাইলে  অনেক কিছুই আছে, তবে বেশি কিছু না বলি।
+                As a classmate : ৫ ওয়াক্ত নামাজ আদয় কারার চেষ্টা করো। 
+                আমার জন্য দোয়া করিও
+               
+            
+                <span class="time">Little Advice/request </span>
+            </div>
+
+            <div class="sms">
+                <strong>🎀 Fifthly </strong><br>
+                মাথায় আসতেছে না🙂
+                <span class="time">(thinking 🤔)</span>
+            </div>
+
+            <div class="sms">
+                <strong>🌷 lastly</strong><br>
+                1.5 year+ College এ আছি, যদি কোনো ভুল হয়ে থাকে তাহলে As a classmate/friend  মনে করে ভুলে যাবে সেই আসাই করি। 
+                <br><br>
+                <b>Happy birthday , Lamia।</b><br>
+                তোমার সামনের দিনগুলো অনেক সুন্দর হোক। 💗
+                <span class="time">— Hasib</span>
+            </div>
+<div >
+            Created with <b>❤️</b> for Lamia by Hasib
+        </div>
+        </div>
+
+    <exam>
+</section>
+
+<button id="next" onclick="nextSection()" aria-label="Next section">↓</button>
+
+<audio id="music" loop preload="auto">
+    <source src="Birthdayl.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const sections=[...document.querySelectorAll("section")];
+const next=document.getElementById("next");
+const progress=document.getElementById("progress");
+const music=document.getElementById("music");
+
+let musicStarted=false;
+let wishDone=false;
+let cakeDone=false;
+
+function startMusic(){
+    if(musicStarted)return;
+    music.play().then(()=>musicStarted=true).catch(()=>{});
+}
+
+function enterSite(){
+    startMusic();
+    sections[1].scrollIntoView({behavior:"smooth"});
+    burst(["🌸","♡","✨"]);
+}
+
+function revealWish(){
+    if(wishDone)return;
+    wishDone=true;
+    document.getElementById("wishReveal").classList.add("show");
+    burst(["✨","♡","🌸"]);
+}
+
+function blowCandles(){
+    if(cakeDone)return;
+    cakeDone=true;
+
+    document.getElementById("cakeObject").classList.add("blown");
+    document.getElementById("cakeMessage").innerHTML=
+        "<b>Wish made! ✨</b><br>তোমার মনের সুন্দর ইচ্ছেগুলো সত্যি হোক। ♡";
+
+    burst(["🎀","✨","💗","🌸"]);
+}
+
+function getCurrent(){
+    const y=window.scrollY+window.innerHeight*.45;
+    let index=0;
+
+    sections.forEach((section,i)=>{
+        if(section.offsetTop<=y)index=i;
+    });
+
+    return index;
+}
+
+function nextSection(){
+    const i=getCurrent();
+
+    if(i<sections.length-1){
+        sections[i+1].scrollIntoView({
+            behavior:"smooth",
+            block:"start"
+        });
+    }else{
+        sections[0].scrollIntoView({
+            behavior:"smooth",
+            block:"start"
+        });
+    }
+}
+
+function updateUI(){
+    const max=document.documentElement.scrollHeight-window.innerHeight;
+    progress.style.width=(max>0?(window.scrollY/max)*100:0)+"%";
+
+    const i=getCurrent();
+    next.textContent=i===sections.length-1?"↑":"↓";
+}
+
+window.addEventListener("scroll",updateUI,{passive:true});
+window.addEventListener("resize",updateUI);
+
+function burst(symbols){
+    for(let i=0;i<14;i++){
+        const el=document.createElement("span");
+        el.className="confetti";
+        el.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+        el.style.left="50%";
+        el.style.top="45%";
+        el.style.setProperty("--x",(Math.random()*380-190)+"px");
+        el.style.setProperty("--y",(Math.random()*350-175)+"px");
+        el.style.fontSize=(14+Math.random()*12)+"px";
+
+        document.body.appendChild(el);
+        setTimeout(()=>el.remove(),1500);
+    }
+}
+
+/* Start music on the first interaction, while still respecting browser autoplay rules. */
+document.addEventListener("pointerdown",startMusic,{once:true});
+
+updateUI();
+</script>
+
+</body>
+</html>
